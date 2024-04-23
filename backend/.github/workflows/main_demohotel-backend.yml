@@ -1,0 +1,24 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy JAR app to Azure Web App - demohotel-backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build and deploy
+    steps:
+      - uses: actions/checkout@v3
+      - uses: azure/docker-login@v1
+        with:
+          login-server : demohotelregistry.azurecr.io
+          username : demohotelregistry
+          password : aO0BN9sHmiKDzqeq29h0kdoVO8vzthJBS8MvnR8QbX+ACRDFOYej
+      - run: |
+          docker build . -t demohotelregistry.azurecr.io/demohotelregistry:latest
+          docker push demohotelregistry.azurecr.io/demohotelregistry:latest
