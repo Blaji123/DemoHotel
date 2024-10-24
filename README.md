@@ -44,7 +44,7 @@ Technologies used: React (frontend), Spring Boot (backend), and MySQL (database)
 2. npm install
 3. npm run dev
    
-### 8. **Usage**
+### Usage
 Open your web browser and navigate to http://localhost:5173.
 Use the provided login/register functionality to authenticate as a user.
 Explore the available rooms, book rooms, and manage bookings as needed.
